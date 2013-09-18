@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Javascript Registration Form</title>
+		<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css"/>
+
+		<script type="text/javascript" src="assets/jquery2.js"></script>
+		<script type="text/javascript" src="assets/script.js"></script>
+	</head>
+	
+	<script type="text/javascript">
+
+
+	
+		function validate(form_id, email)
+		{
+			var reg= /^([A-Za-z0-9_\-\.]){1,}\@([A-Za-z0-9_\-\.]){1,}\.([a-z]{2,4})$/;
+			var address= document.forms[form_id].elements[email]. value;
+			
+			if (reg.test(address)==false)
+			{
+				alert('Enter a valid email address');
+				document.forms[form_id].elements[email].focus();
+				return false;	
+			}
+			
+			var invalid = " "; // Invalid character is a space
+			var minLength = 6; // Minimum length
+			var pw1 = document.myForm.password.value;
+			var pw2 = document.myForm.password2.value;
+
+			// check for a value in both fields.
+			if (pw1 == '' || pw2 == '') {
+			alert('Please enter your password twice.');
+			return false;
+			}
+			// check for minimum length
+			if (document.myForm.password.value.length < minLength) {
+			alert('Your password must be at least ' + minLength + ' characters long. Try again.');
+			return false;
+			}
+			// check for spaces
+			if (document.myForm.password.value.indexOf(invalid) > -1) {
+			alert("Sorry, spaces are not allowed.");
+			return false;
+			}
+			else {
+			if (pw1 != pw2) {
+			alert ("You did not enter the same new password twice. Please re-enter your password.");
+			return false;
+			}
+			else {
+			alert('Nice job.');
+			return true;
+			}
+		}
+	}
+                        
+		</script>
+	
+	<body>	
+	<div id="class"></div>
+			<form id="form_id" name="myForm" class="well" method="get" action="success.html" style="width:250px; margin:0px auto;" onsubmit="javascript: return validate('form_id','email');">
+				<h4 style="color:blue;">Registration New Form</h4><br/>
+	
+				<input type="text" id="user" maxlength="8" placeholder="Username" required=""/>
+				<input type="text" id="email" maxlength="30" placeholder="Email Address" required="required"/>
+				
+				<label style="cursor:default;">Type your desired password</label>
+				<input type="password" id="pass" name="password" maxlength="12" placeholder="Password" required="required"/>
+				<input type="password" id="repass" name="password2" maxlength="12" placeholder="Re Enter password" required="required"/>
+				
+				<label style="cursor:default;">Your address</label>
+				<select>
+					<option value="vigan">Vigan</option>
+					<option value="abra">Abra</option>
+					<option value="laoag">Laoag</option>
+					<option value="sanfer">San fernando </option>
+				</select>
+				
+				<textarea required="required"></textarea><br/>
+				<input type="checkbox" id="check" required="required"> I accept the term and condition</input><br/>
+			    <input class="btn" id="btn" type="submit" value="Submit" style="margin-left:150px;"></input>
+			</form>
+	</body>
+</html>
