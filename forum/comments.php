@@ -57,7 +57,7 @@
 			    <input type="submit" name='submit2' value="Submit" class="btn btn-primary" id="btn" style="margin-left:160px;"></input>
 			</form>
 			<?php 
-			mysql_connect("localhost","root","");
+			mysql_connect("tunnel.pagodabox.com:3306","shaunte","G7edVLZo");
 			mysql_select_db("forum_rp");
 
 			if (isset($_POST['submit2'])){

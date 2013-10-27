@@ -78,7 +78,7 @@
 	<body>
 	<div id="wrapper">
 		<?php
-				mysql_connect("localhost","root","");
+				mysql_connect("tunnel.pagodabox.com:3306","shaunte","G7edVLZo");
 				mysql_select_db("forum_rp");
 				
 			if (!isset($_GET['topic_id']) || trim($_GET['topic_id'])=='')
@@ -108,7 +108,7 @@
 		?>
 		
 		<?php
-				mysql_connect("localhost","root","");
+				mysql_connect("tunnel.pagodabox.com:3306","shaunte","G7edVLZo");
 				mysql_select_db("forum_rp");
 				
 			if (!isset($_GET['comment_id']) || trim($_GET['comment_id'])=='')
